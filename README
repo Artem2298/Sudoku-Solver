@@ -1,0 +1,41 @@
+Sudoku Solver
+This is a C++ program that solves Sudoku puzzles using a backtracking algorithm.
+
+How to use
+Compile the program using a C++ compiler (e.g., g++):
+g++ -o sudoku_solver sudoku_solver.cpp
+
+Run the program:
+./sudoku_solver
+
+Enter the name of a text file containing a 9x9 Sudoku grid.
+The file should contain 9 lines, each with 9 digits. Empty cells should be represented by 0.
+The program will output the solved Sudoku grid or indicate if no solution exists.
+
+Example Input File (example.txt)
+530070000
+600195000
+098000060
+800060003
+400803001
+700020006
+060000280
+000419005
+000080079
+
+Function Descriptions
+bool loadData(string fileName)
+Loads the Sudoku puzzle from a file. The file should contain 9 lines, each with 9 digits (0 representing an empty cell). Returns false if the file is not found or cannot be opened.
+
+bool сhekСondition(int row, int col, int number)
+Checks if a number can be placed in the given row and column without violating the Sudoku rules (row, column, and 3x3 subgrid). Returns true if the number can be placed, otherwise false.
+
+bool sudokuSolution(int row, int col)
+Recursively solves the Sudoku puzzle using a backtracking algorithm. Starts from the top-left corner and attempts to fill in numbers according to Sudoku rules. Returns true if a solution is found, otherwise false.
+
+void print()
+Prints the solved Sudoku puzzle to the console. If no solution exists, prints a message indicating that the puzzle cannot be solved.
+
+int main()
+The main function. Prompts the user for the file name containing the Sudoku puzzle, loads the puzzle, and prints the solved puzzle or an error message if the puzzle is unsolvable.
+
